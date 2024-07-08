@@ -13,15 +13,20 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    - name: Auto_Grader
-      id: auto_grader
-      uses: classroom-resources/autograding-python-grader@v1
+    - name: grade
+      id: grade
+      uses: classroom-resources/autograding-io-grader@v1
       with:
-        timeout: 10
+        test-name: grade
         setup-command: ''
+        command: text.py
+        input: ''
+        expected-output: ''
+        comparison-method: contains
+        timeout: 1
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
-        AUTO_GRADER_RESULTS: "${{steps.auto_grader.outputs.result}}"
+        GRADE_RESULTS: "${{steps.grade.outputs.result}}"
       with:
-        runners: auto_grader
+        runners: grade
