@@ -19,7 +19,7 @@ jobs:
       with:
         test-name: grade
         setup-command: ''
-        command: list1.py
+        command: python3 list1.py
         input: ''
         expected-output: |2-
            OK  got: 3 expected: 3
