@@ -41,7 +41,7 @@ def match_ends(words):
 def front_x(words):
   # +++your code here+++
   # LAB(begin solution)
-  # Put each word into the x_list or the other_list.
+  # Put
   x_list = []
   other_list = []
   for w in words:
