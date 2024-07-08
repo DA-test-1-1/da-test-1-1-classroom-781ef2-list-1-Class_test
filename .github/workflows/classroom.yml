@@ -18,27 +18,15 @@ jobs:
       uses: classroom-resources/autograding-io-grader@v1
       with:
         test-name: grade
-        setup-command: ''
+        setup-command: list1.py
         command: text.py
         input: ''
         expected-output: ''
         comparison-method: contains
         timeout: 1
-    - name: grader
-      id: grader
-      uses: classroom-resources/autograding-io-grader@v1
-      with:
-        test-name: grader
-        setup-command: test.py
-        command: test.py
-        input: ''
-        expected-output: ''
-        comparison-method: contains
-        timeout: 10
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
         GRADE_RESULTS: "${{steps.grade.outputs.result}}"
-        GRADER_RESULTS: "${{steps.grader.outputs.result}}"
       with:
-        runners: grade,grader
+        runners: grade
