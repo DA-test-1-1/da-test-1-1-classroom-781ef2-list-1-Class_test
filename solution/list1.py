@@ -28,9 +28,6 @@ def match_ends(words):
     if len(word) >= 2 and word[0] == word[-1]:
       count = count + 1
   return count
-  # LAB(replace solution)
-  # return
-  # LAB(end solution)
 
 
 # B. front_x
