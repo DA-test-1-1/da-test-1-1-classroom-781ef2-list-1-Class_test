@@ -30,7 +30,7 @@ def match_ends(words):
       count = count + 1
   return count
 
-
+#test
 # B. front_x
 # Given a list of strings, return a list with the strings
 # in sorted order, except group all the strings that begin with 'x' first.
@@ -41,7 +41,7 @@ def match_ends(words):
 def front_x(words):
   # +++your code here+++
   # LAB(begin solution)
-  # Put each word into the x_list or the other_list.
+  # Put
   x_list = []
   other_list = []
   for w in words:
